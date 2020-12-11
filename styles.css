@@ -71,7 +71,7 @@ header .profile-image {
   transition: all .5s;
 }
 header .profile-image:hover {
-  transform: scale(2.0) rotate(720deg);
+  transform: scale(2.0) rotate(900deg);
 }
 .tag {
   background-color: gray;
@@ -223,8 +223,6 @@ img {
 
 .card-title {
   text-align:center;
-  border: solid black 3px;
-  border-radius: 10%;
+  border: thick double black;
   margin-top: 50px;
-  
 }
