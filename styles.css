@@ -144,6 +144,7 @@ footer ul li {
   display: inline-block;
 }
 
+/* Pseudo-classes ------------------ */
 a.social {
   display: inline-block;
   text-indent: -9999px;
@@ -214,6 +215,10 @@ h3 {
     color: maroon;
     letter-spacing: .5px;
   
+}
+
+img {
+  max-width: 100%;
 }
 
 .card-title {
