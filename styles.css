@@ -41,6 +41,14 @@ a:hover {
   position: fixed;
   text-align: center;
 }
+.secondary-nav {
+  width: 100%;
+  background: black;
+  min-height: 30px;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+}
 .nav {
   display: flex;
   justify-content: space-around;
