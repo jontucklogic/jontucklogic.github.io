@@ -1,15 +1,25 @@
+/* Web Fonts -------------------- */
+
+@font-face {
+  font-family: 'Abolition Regular'; 
+  src: url('../fonts/abolition-regular-webfont.eot');
+  src: url('../fonts/abolition-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/abolition-regular-webfont.woff') format('woff'),
+       url('../fonts/abolition-regular-webfont.ttf') format('truetype');
+}
+
 /* Global Layout Set-up */
 * { 
   box-sizing: border-box;
 }
-  
+ 
 body {
   margin: 5px;
   padding: 5px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   color: #222;
-  background: linear-gradient(45deg, blue, red);
+  background: linear-gradient(135deg, orange 60%, cyan);
 }
 /* Link Styles */
 
