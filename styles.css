@@ -8,6 +8,7 @@ body {
   padding: 5px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   color: #222;
   background: linear-gradient(135deg, orange 60%, cyan);
 }
