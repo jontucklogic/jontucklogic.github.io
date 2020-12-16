@@ -9,7 +9,7 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   color: #222;
-  background: linear-gradient(135deg, orange 60%, cyan);
+  background: linear-gradient(135deg, #ffadad 0%, #ffd6a5 17%, #fdffb6 34%, #caffbf 51%, #9bf6ff 68%, #a0c4ff 85%, #bdb2ff 100%);
 }
 
 /* Link Styles */
