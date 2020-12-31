@@ -9,7 +9,7 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
-  color: #000000;
+  background-color: #080947;
 }
 
 .name,
@@ -33,12 +33,13 @@ h3 {
 h2 {
   color: #ffa632;
   font-size: 1.25em;
-  padding-top: 1.5em;
-	padding-bottom: 1.5em;
+  padding-top: 0.5em;
+	padding-bottom: 0.5em;
   margin-top: 1em;
 }
 
 h3 {
+  color: hotpink;
   font-size: 1.5em;
   font-weight: 500;
   margin-top: 6px;
@@ -57,8 +58,8 @@ img {
 }
 
 .content-img {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .profile-image {
@@ -78,7 +79,7 @@ img {
   padding-left: 16px;
   padding-right: 16px;
   padding-bottom: 16px;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
   text-align: center;
 }
 
@@ -154,8 +155,8 @@ ul.skills {
 
 .main-header {
   text-align: center;
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
 	background: #080947;
   margin-bottom: 30px;
 }
@@ -202,14 +203,9 @@ ul.skills {
 
 @media (min-width: 768px) {
   
-  .wrap {
-    min-height: 100vh;
-    
-  }
-  
-  .container {
+    .container {
     width: 95%;
-    max-width: 1150px;
+    max-width: 1440px;
     margin: 0 auto;
   }
 
