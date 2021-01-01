@@ -1,0 +1,83 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+}
+
+table {
+  max-width: 960px;
+  margin: 10px auto;
+  border: 5px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+
+}
+
+
+caption {
+  font: 1.7rem rapscallion;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 0 #fff, 0 0 9px #000;
+}
+
+thead th {
+  font-weight: 400;
+  background: #8a97a0;
+  color: #FFF;
+}
+
+.name {
+  font: 1.4rem molot;
+  text-shadow: 1px 1px 1px #fff, 2px 2px 1px #000;
+}
+
+td {
+  text-align: center;
+}
+
+.e-mail {
+  font: 1.7rem rapscallion;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 0 #fff, 0 0 9px #000;
+}
+
+.jobrole {
+  font: 1.4rem molo;
+  text-shadow: 1px 1px 1px #fff, 2px 2px 1px #000;
+}
+
+tr {
+  background: #f4f7f8;
+  border-bottom: 1px solid #FFF;
+  margin-bottom: 5px;
+}
+
+tr:nth-child(even) {
+  background: #e8eeef;
+}
+
+th, td {
+  text-align: left;
+  padding: 20px;
+  font-weight: 300;
+  border: 5px solid rgb(200, 200, 200);
+}
+
+th {
+  text-align: center;
+}
+
+tfoot tr {
+  background: none;
+}
+
+tfoot td {
+  padding: 10px 2px;
+  font-size: 0.8em;
+  font-style: italic;
+  color: #8a97a0;
+}
