@@ -1,259 +1,348 @@
 /* Global Layout Set-up */
-* { 
-  box-sizing: border-box;
+*
+{
+    box-sizing: border-box;
 }
- body {
-  margin: 5px;
-  padding: 5px;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  color: #222;
-  background: linear-gradient(135deg, #ffadad 0%, #ffd6a5 17%, #fdffb6 34%, #caffbf 51%, #9bf6ff 68%, #a0c4ff 85%, #bdb2ff 100%);
+body
+{
+    font-family: 'Open Sans', sans-serif;
+
+    margin: 5px;
+    padding: 5px;
+
+    text-align: center;
+
+    color: #222;
+    background: linear-gradient(135deg, #ffadad 0%, #ffd6a5 17%, #fdffb6 34%, #caffbf 51%, #9bf6ff 68%, #a0c4ff 85%, #bdb2ff 100%);
 }
 
 /* Link Styles */
-a {
-  text-decoration: none;
-  color: #0499ff;
+a
+{
+    text-decoration: none;
+
+    color: #0499ff;
 }
-a:hover {
-  color: #6633ff;
+a:hover
+{
+    color: #63f;
 }
 
 /* Section Styles */
 
-.main-nav {
-  width: 100%;
-  background: black;
-  min-height: 30px;
-  padding: 10px;
-  position: fixed;
-  text-align: center;
-  top: 0;
- }
-.secondary-nav {
-  width: 100%;
-  background: black;
-  min-height: 30px;
-  padding: 10px;
-  position: fixed;
-  text-align: center;
+.main-nav
+{
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+    min-height: 30px;
+    padding: 10px;
+
+    text-align: center;
+
+    background: black;
 }
-.nav {
-  display: flex;
-  justify-content: space-around;
-  font-weight: 700;
-  list-style-type: none;
-  margin: 0 auto;
-  padding: 0;
+.secondary-nav
+{
+    position: fixed;
+
+    width: 100%;
+    min-height: 30px;
+    padding: 10px;
+
+    text-align: center;
+
+    background: black;
 }
-.nav .name {
-  display: none;
+.nav
+{
+    font-weight: 700;
+
+    display: flex;
+
+    margin: 0 auto;
+    padding: 0;
+
+    list-style-type: none;
+
+    justify-content: space-around;
 }
-.nav li {
-  padding: 5px 10px 10px 10px;
+.nav .name
+{
+    display: none;
 }
-.nav a {
-  transition: all .5s;
+.nav li
+{
+    padding: 5px 10px 10px 10px;
 }
-.nav a:hover {
-  color: white
+.nav a
+{
+    transition: all .5s;
+}
+.nav a:hover
+{
+    color: white;
 }
 
-header {
-  text-align: center;
-  background: url('images/new_background.jpg') no-repeat center center ;
-  background-size: cover;
-  overflow: hidden;
-  padding-top: 80px;
+header
+{
+    overflow: hidden;
+
+    padding-top: 80px;
+
+    text-align: center;
+
+    background: url('images/new_background.jpg') no-repeat center center ;
+    background-size: cover;
 }
-header {
-  line-height: 1.5;
+header
+{
+    line-height: 1.5;
 }
-header .profile-image {
-  margin-top: 50px;
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
-  border: 6px solid rgb(233, 10, 10);
-  transition: all .5s;
+header .profile-image
+{
+    width: 150px;
+    height: 150px;
+    margin-top: 50px;
+
+    transition: all .5s;
+
+    border: 6px solid rgb(233, 10, 10);
+    border-radius: 100%;
 }
-header .profile-image:hover {
-  transform: scale(3.0) rotate(720deg);
+header .profile-image:hover
+{
+    transform: scale(3.0) rotate(720deg);
 }
-.tag {
-  background-color: gray;
-  color: black;
-  padding: 10px;
-  border-radius: 5px;
-  display: table;
-  margin: 10px auto;
-} 
-.location {
-  background-color: #222;
-  color: white;
+.tag
+{
+    display: table;
+
+    margin: 10px auto;
+    padding: 10px;
+
+    color: black;
+    border-radius: 5px;
+    background-color: gray;
 }
-.card {
-  margin: 30px;
-  padding: 20px 40px 40px;
-  max-width: 500px;
-  text-align: left;
-  background: #fff;
-  border-bottom: 4px solid #ccc;
-  border-radius: 6px;
+.location
+{
+    color: white;
+    background-color: #222;
 }
-.card:hover {
-  border-color: #f00c0c;
+.card
+{
+    max-width: 500px;
+    margin: 30px;
+    padding: 20px 40px 40px;
+
+    text-align: left;
+
+    border-bottom: 4px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+}
+.card:hover
+{
+    border-color: #f00c0c;
 }
 
-ul.skills {
-  padding: 0;
-  text-align: center;
+ul.skills
+{
+    padding: 0;
+
+    text-align: center;
 }
 
-.skills li {
-  border-radius: 6px;
-  display: inline-block;
-  background: #ff9904;
-  color: white;
-  padding: 5px 10px;
-  margin: 2px;
+.skills li
+{
+    display: inline-block;
+
+    margin: 2px;
+    padding: 5px 10px;
+
+    color: white;
+    border-radius: 6px;
+    background: #ff9904;
 }
 
-.skills li:nth-child(odd) {
-  background: #0399ff;
+.skills li:nth-child(odd)
+{
+    background: #0399ff;
 }
 
-h1 {
-  background-color: #e2e2e2; 
-  padding: 5px;
-  margin: 5px;
+h1
+{
+    margin: 5px;
+    padding: 5px;
+
+    background-color: #e2e2e2;
 }
 
-footer {
-  width: 100%;
-  min-height: 30px;
-  padding: 20px 0 40px 20px;
+footer
+{
+    width: 100%;
+    min-height: 30px;
+    padding: 20px 0 40px 20px;
 }
 
-footer .copyright {
-  top: -8px;
-  margin-right: 20px;
-  font-size: .75em;
+footer .copyright
+{
+    font-size: .75em;
+
+    top: -8px;
+
+    margin-right: 20px;
 }
 
-footer ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+footer ul
+{
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
 }
 
-footer ul li {
-  display: inline-block;
+footer ul li
+{
+    display: inline-block;
 }
 
 /* Pseudo-classes ------------------ */
-a.social {
-  display: inline-block;
-  text-indent: -9999px;
-  margin-left: 5px;
-  width: 30px;
-  height: 30px;
-  background-size: 30px 30px;
-  opacity: .5;
-  transition: all .25s;
+a.social
+{
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+
+    transition: all .25s;
+    text-indent: -9999px;
+
+    opacity: .5;
+    background-size: 30px 30px;
 }
-a.twitter {
-  background-image: url(images/twitter.svg);
+a.twitter
+{
+    background-image: url(images/twitter.svg);
 }
-a.linkedin {
-  background-image: url(images/linkedin.svg);
+a.linkedin
+{
+    background-image: url(images/linkedin.svg);
 }
-a.github {
-  background-image: url(images/github.svg);
+a.github
+{
+    background-image: url(images/github.svg);
 }
-a.social:hover {
-  opacity: 1;
+a.social:hover
+{
+    opacity: 1;
 }
-.clearfix {
-  clear: both;
+.clearfix
+{
+    clear: both;
 }
 
 /* Styles for larger screens */
-@media screen and (min-width: 720px) {
-  
-  .flex {
-      display: flex;
-      max-width: 1200px;
-      justify-content: space-around;
-      margin: 0 auto;
-  }
+@media screen and (min-width: 720px)
+{
+    .flex
+    {
+        display: flex;
 
-  header {
-    min-height: 450px;
-  }
+        max-width: 1200px;
+        margin: 0 auto;
 
-  .nav {
-    max-width: 1200px;
-  }
+        justify-content: space-around;
+    }
 
-  .nav .name {
-    display: block;
-    margin-right: auto;
-    color: white;
-  }
+    header
+    {
+        min-height: 450px;
+    }
 
-  main {
-    padding-top: 50px;
-  }
+    .nav
+    {
+        max-width: 1200px;
+    }
 
-  main p {
-    line-height: 1.6em;
-  }
+    .nav .name
+    {
+        display: block;
 
-  footer {
-    font-size: 1.3em;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+        margin-right: auto;
 
+        color: white;
+    }
+
+    main
+    {
+        padding-top: 50px;
+    }
+
+    main p
+    {
+        line-height: 1.6em;
+    }
+
+    footer
+    {
+        font-size: 1.3em;
+
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
 
-h3 {
-    color: maroon;
+h3
+{
     letter-spacing: .5px;
-  
+
+    color: maroon;
 }
 
-img {
-  max-width: 100%;
+img
+{
+    max-width: 100%;
 }
 
 .card-title,
-.section-title {
-  text-align:center;
-  border: 0.4rem solid;
-  margin-top: 50px;
+.section-title
+{
+    margin-top: 50px;
+
+    text-align: center;
+
+    border: .4rem solid;
 }
 
 /*  Media Queries ------------------- */
-@media (max-width: 960px) {
-  body {
-    background: royalblue;
-  }
+@media (max-width: 960px)
+{
+    body
+    {
+        background: royalblue;
+    }
 }
 
-@media (max-width: 480px) {
-  body {
-    background: darkred; 
-  }
+@media (max-width: 480px)
+{
+    body
+    {
+        background: darkred;
+    }
 }
 
-@media (min-width: 481px) and (max-width: 700px) {
-  body {
-    background: seagreen;
-  }
-   p {
-    color: white;
-  }
+@media (min-width: 481px) and (max-width: 700px)
+{
+    body
+    {
+        background: seagreen;
+    }
+    p
+    {
+        color: white;
+    }
 }
