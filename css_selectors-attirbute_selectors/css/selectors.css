@@ -1,0 +1,106 @@
+/* Attribute Selectors ------------- */
+
+
+.form-contact
+{
+    padding: 20px 24px;
+
+    background: #f4f7f8;
+}
+
+
+
+#container
+{
+    max-width: 500px;
+    margin: auto;
+}
+
+input[type='email']
+{
+    background: #fdfee6;
+}
+
+a[target='_blank']
+{
+    text-decoration: none;
+
+    color: #39add1;
+    border-bottom: 1px dotted;
+}
+
+/* DRY Classes ------------- */
+
+.br
+{
+    border-radius: .5em;
+}
+
+.avatar
+{
+    display: block;
+
+    margin: 0 auto 2em;
+}
+
+.rounded
+{
+    border-radius: 50%;
+}
+
+.btn
+{
+    font-size: .875em;
+    font-weight: 400;
+
+    padding-right: 20px;
+    padding-left: 20px;
+
+    cursor: pointer;
+    text-transform: uppercase;
+
+    color: #fff;
+}
+
+.btn:hover
+{
+    opacity: .75;
+}
+
+.default
+{
+    background-color: #52bab3;
+}
+
+.error
+{
+    background-color: #ff784f;
+}
+
+@media (min-width: 769px)
+{
+    .inln
+    {
+        width: auto;
+        width: inline-block;
+    }
+    .btn + .btn
+    {
+        margin-left: 20px;
+    }
+}
+
+/* Combinators------------- */
+
+form > a
+{
+    font-size: .7em;
+}
+
+h1 ~ label
+{
+    padding: 5px;
+
+    color: white;
+    background: tomato;
+}

@@ -1,0 +1,71 @@
+/* Base Styles -------------------- */
+
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Nunito', sans-serif;
+
+    padding: 40px 0 60px;
+
+    color: #384047;
+}
+hr
+{
+    height: 0;
+    margin: 50px 0;
+
+    border: 0;
+    border-top: 1px dotted rgba(0, 0, 0, .2);
+}
+h1
+{
+    margin: 0 0 30px 0;
+
+    text-align: center;
+}
+form
+{
+    margin-bottom: 60px;
+}
+
+/* Form Fields -------------------- */
+
+input,
+textarea
+{
+    font-size: 1em;
+    font-weight: 300;
+
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.2em;
+    padding: 15px;
+
+    color: black;
+    border: none;
+    border-bottom: 3px solid rgba(0,0,0, .05);
+    border-radius: .3em;
+    outline: 0;
+    background-color: #e8eeef;
+    box-shadow: 0 1px 0 rgba(0,0,0,.03) inset;
+}
+
+label
+{
+    display: block;
+
+    margin-bottom: .5em;
+}
+
+/* Media Queries -------------------- */
+
+@media (max-width: 768px)
+{
+    #container
+    {
+        width: 92%;
+    }
+}
