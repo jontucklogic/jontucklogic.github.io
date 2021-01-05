@@ -104,3 +104,10 @@ h1 ~ label
     color: white;
     background: tomato;
 }
+
+/* UI element states pseudo-classes */
+
+input:focus,
+textarea:focus {
+    border-color:#39add1
+}
