@@ -145,6 +145,16 @@ label.light
     text-shadow: 0 1px 0 rgba(255,255,255,.2);
 }
 
+/* UI element states pseudo-classes */
+input:focus,
+textarea:focus {
+    border-color: #52bab3;
+}
+
+input[type="checkbox"]:checked + label {
+    font-weight: bold;    
+}
+
 @media screen and (min-width: 480px)
 {
     form
