@@ -7,9 +7,9 @@ const daysPerWeek = 7;
 const weeksPerYear = 52;
 const daysPerYear = 365;
 
-function formatNumber(num) {
-    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-  }
+// function formatNumber(num) {
+//     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+//   }
 
 // Ask the user for their age
 const yourage = prompt("What is your age?");
