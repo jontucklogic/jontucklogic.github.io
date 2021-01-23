@@ -22,8 +22,10 @@ const main = document.querySelector("main");
 if ( isNaN(lowNumber) && isNaN(highNumber) ) {
   main.innerHTML = 
     `<h2>You need to provide two numbers. Try again.<h2>`;
-}
-else {
+} else if ( lowNumber < 10 || highNumber > 25) {
+  main.innerHTML = 
+    `<h2>The first number must be greater than or equal to 10. The second must be less than or equal to 25. Try again.</h2>`
+} else {
 //  Use Math.random() and the user's number to generate a random number
   const randomNumber = Math.floor( Math.random() * (highNumber - lowNumber + 1) ) + lowNumber;
   
