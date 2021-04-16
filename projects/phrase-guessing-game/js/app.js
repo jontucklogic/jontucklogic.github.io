@@ -2,27 +2,42 @@
  * Project 4 - OOP Game App
  * app.js */
 
- /*
- * Listens for a click on the start button and starts the game
- */
-var game;
-const startButton = document.getElementById("btn__reset");
-const keys = document.getElementsByClassName("key");
+// DOM Elements
+const startGame = document.querySelector('#btn__reset');
+const overlay = document.querySelector('#overlay');
+const qwerty = document.querySelectorAll('#qwerty button');
+const phraseOnBoard = document.querySelector('#phrase ul');
+let game;
 
+/* ---------------------------------------------------------------------------------------------------- */
+// Events
+/* ---------------------------------------------------------------------------------------------------- */
 
-startButton.addEventListener('click', (e) => {
-game = new Game();
-game.startGame();
+// Start Game
+startGame.addEventListener('click', () => {
+    // Instantiate Game Class
+    game = new Game();
+    game.startGame();
+
 });
 
-//loops through the keyboard keys
-for(let i = 0; i < keys.length; i++){
-	//listens for button clicks on the UI keyboard
-	keys[i].addEventListener("click", function(e){
-		let target = e.target;
-			
-		if (target.tagName === "BUTTON") {
-			game.handleInteraction(target);
-		}
-	});
-}
+// Keys (Click);
+qwerty.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const userGuess = e.target;
+
+        game.handleInteraction(userGuess);
+    })
+})
+
+// Keys (Keyup)
+document.addEventListener('keyup', (e) => {
+    const userGuess = e.key;
+
+    qwerty.forEach(button => {
+        if (userGuess === button.textContent && !button.disabled) {
+
+            game.handleInteraction(button);
+        }
+    })
+})

@@ -319,7 +319,8 @@ button:hover {
   max-width: calc(100% - 30px);
   padding-left: 0;
   padding-right: 0;
-  margin: 35px 15px 10px;
+  padding-bottom: 0;
+  margin: 35px 15px 0px;
 }
 
 .activities-box {
@@ -411,7 +412,6 @@ button:hover {
 .activities-cost {
   color: black;
   font-size: 1.5rem;
-  margin-top: 35px;
   margin-right: -10px;
   margin-bottom: 5px;
 }
@@ -538,6 +538,11 @@ button:hover {
     768px - Activity section styles
   ==================================== */
 
+  .activities {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
   .activities-box {
     display: flex;
     flex-flow: row wrap;
@@ -568,9 +573,8 @@ button:hover {
 
   .activities-cost {
     position: absolute;
-    font-weight: bolder;;
+    font-weight: bolder;
     right: 15px;
-    top: 515px;
   }
 
   /* ================================= 
@@ -607,7 +611,7 @@ button:hover {
   .expiration-box {
     position: absolute;
     right: 10px;
-    top: 57px;
+    top: 30px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -617,7 +621,7 @@ button:hover {
   /* Mozilla specific style for expiration date container to accomplish cross browser styles */
   @-moz-document url-prefix() {
     .expiration-box {
-      top: 37px;
+      top: 30px;
     }
   }
 

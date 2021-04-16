@@ -1,149 +1,152 @@
 /*
-Data Pagination and Filtering: Student List
+Treehouse Techdegree: FSJS Project 2 - Data Pagination and Filtering
 */
+
+// header variable
+const header = document.querySelector('.header');
+
+// search bar
+const searchBar = `
+   <label for="search" class="student-search">
+      <p id="alert-message"></p>
+      <input id="search" placeholder="Search by name...">
+      <button type="button" id="search-btn"><img src="img/icn-search.svg" alt="Search icon"></button>
+   </label>
+`;
+
+header.insertAdjacentHTML('beforeend', searchBar);
+
+// number of students to display at any given time
+const perPage = 9;
 
 /*
-The "showPage" function first shows "no students found" 
-if the list is empty. If the list is not empty it creates 
-and inserts the elements needed to display the page of nine students.
+create the showPage function. 
+this function will create and insert/append the elements needed to display a "page" of nine students
 */
+function showPage(list, page) {
+   // variables to represent the index of the first and last student on the current page
+   const startIndex = (page * perPage) - perPage;
+   const endIndex = (page * perPage);
 
-function showPage (list, page) {
-	if ( list === undefined || list.length == 0 ) {
-		const studentList = document.querySelector(".student-list");
-		studentList.innerHTML = "<h2>No students found.</h2>";
-		return;
-	}
-	const startIndex = (page * 9) - 9;
-	let endIndex = page * 9;
-	let studentLeft = list.length - startIndex;
+   // select student list UL from the DOM and reset it to an empty string
+   const studentList = document.querySelector('.student-list');
+   studentList.innerHTML = '';
 
-	if ( studentLeft < 9 ) {
-		endIndex = list.length;
-	}
-
-	const studentList = document.querySelector(".student-list");
-	studentList.innerHTML = "";
-	for (let i = 0; i < list.length; i++) {
-		if ( i >= startIndex && i < endIndex ) {
-			let studentItem = list[i];
-			let studentTemplate = getStudentTemplate(studentItem);
-			studentList.insertAdjacentHTML("beforeend", studentTemplate);
-		}
-	}
-}
-
-/*
-The "getStudentTemplate" function puts together the template for each
-student's information and returns the template. 
-Added this just to keep my code more organized.
-*/
-
-function getStudentTemplate (studentItem) {
-	let studentTemplate = ` <li class="student-item cf">
-    	<div class="student-details">
-			<img class="avatar" src="${studentItem.picture.medium}" alt="Profile Picture">
-			<h3>${studentItem.name.title} ${studentItem.name.first} ${studentItem.name.last}</h3>
-			<span class="email">${studentItem.email}</span>
-		</div>
-		<div class="joined-details">
-			<span class="date">Joined ${studentItem.registered.date}</span>
-		</div>
-		</li>`;
-	return studentTemplate;
-}
-
-/*
-The "addPagination" function creates and inserts the elements 
-needed for the pagination buttons. The addEventListener inside the function
-listens for button clicks to show the page which was clicked.
-*/
-
-function addPagination (list) {
-	const numOfButtons = Math.ceil(list.length / 9);
-	const linkList = document.querySelector(".link-list");
-	linkList.innerHTML = "";
-	for ( let i = 1; i <= numOfButtons; i++ ) {
-		let pageNumButtons = list[i];
-		let buttonTemplate = `<li>
-   		<button type="button">${i}</button>
- 		</li>`
- 		linkList.insertAdjacentHTML("beforeend", buttonTemplate);
-	}
-	
-	if ( list.length > 0 ) {
-	
-	const firstButton = linkList.querySelector('button');
-    firstButton.className = 'active';
-    
-	}
-	
-	linkList.addEventListener('click', (e) => {
-		if ( e.target.tagName === 'BUTTON') {
-			const activeButton = document.querySelector(".active");
-			activeButton.className = "";
-			e.target.className = "active";
-			showPage(list, e.target.textContent);
-		}
-	}); 
+   // loop through the student objects and rendering each student and their details to the UI
+   for (let i = 0; i < list.length; i++) {
+      if (i >= startIndex && i < endIndex) {
+         const studentItem = `
+            <li class="student-item cf">
+               <div class="student-details">
+                  <img class="avatar" src=${list[i].picture.large} alt="Profile Picture">
+                  <h3>${list[i].name.first} ${list[i].name.last}</h3>
+                  <span class="email">${list[i].email}</span>
+               </div>
+               <div class="joined-details">
+                  <span class="date">Joined ${list[i].registered.date}</span>
+               </div>
+            </li>
+         `;
+         studentList.insertAdjacentHTML('beforeend', studentItem);
+      }
+   }
 }
 
 /*
-The "addSearchBar" function creates and inserts the elements 
-needed for the search bar and then uses an addEventListener to listen
-for input into the search bar or button clicks. When an event happens
-they call the performSearch function.
+create the addPagination function. This function will create and insert/append the elements needed for the pagination buttons
 */
+function addPagination(list) {
+   // determine the number of pages needed in order to display all students
+   const numOfPages = Math.ceil(list.length / perPage);
 
-function SearchBar (list) {
-	const pageHeader = document.querySelector(".header");
-	const searchBar = `<label for="search" class="student-search">
-  					   <input id="search" placeholder="Search by name...">
-  					   <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
-					   </label>`		
- 	pageHeader.insertAdjacentHTML("beforeend", searchBar);
-	const searchInput = document.querySelector("#search");
-	const searchButton = searchInput.nextElementSibling;
-	searchInput.addEventListener('keyup', (e) => {
-		if ( e.target.tagName === 'INPUT') {
-			performSearch(searchInput.value);
-		}
-	});
-	searchButton.addEventListener('click', (e) => {
-		if ( e.target.tagName === 'BUTTON') {
-			performSearch(searchInput.value);
-		}
-	});
+   // selecting the pagination list UL from the DOM and reset it to an empty string
+   const linkList = document.querySelector('.link-list');
+   linkList.innerHTML = '';
+
+   // loop through and determine how many buttons should be displayed based on the value of 'numOfPages'
+   for (let i = 1; i <= numOfPages; i++) {
+      const button = `
+         <li>
+            <button type="button">${i}</button>
+         </li>
+      `;
+
+      linkList.insertAdjacentHTML('beforeend', button);
+
+      linkList.querySelector('button').className = 'active';
+   }
+
+   // click event listener on all buttons to add and remove active class
+   linkList.addEventListener('click', (e) => {
+      const target = e.target;
+
+      if (target.tagName === 'BUTTON') {
+         document.querySelector('.active').className = '';
+         target.className = 'active';
+
+         showPage(list, target.textContent);
+      }
+   })
 }
 
-/* 
-The "performSearch" function loops through the student data array
-and then, using a conditional statement, makes sure the input matches
-a student's first or last name. Then, the matching student displays
-on the page.
-*/
+// search DOM Variables
+const searchInput = document.querySelector('#search');
+const searchBtn = document.querySelector('#search-btn');
 
-function performSearch (inputText) {
-	let filteredStudents = [];
-	for (let i = 0; i < data.length; i++) {
-		const firstIncludesInput = data[i].name.first.toLowerCase().includes(inputText.toLowerCase());
-		const lastIncludesInput = data[i].name.last.toLowerCase().includes(inputText.toLowerCase());
-		if ( firstIncludesInput || lastIncludesInput ) {
-			filteredStudents.push(data[i]);
-		}
-	}
-	showPage(filteredStudents, 1);
-	addPagination(filteredStudents);
+// search student function
+function searchStudent() {
+   const userValue = searchInput.value.toLowerCase();
+   const filteredStudents = [];
+
+   if (searchInput.value.length !== 0) {
+      for (let i = 0; i < data.length; i++) {
+         const firstName = data[i].name.first.toLowerCase();
+         const lastName = data[i].name.last.toLowerCase();
+
+         if (firstName.includes(userValue) || lastName.includes(userValue)) {
+            filteredStudents.push(data[i]);
+         }
+      }
+
+      // call functions and update students displayed as well as the pagination
+      showPage(filteredStudents, 1);
+      addPagination(filteredStudents);
+
+      // alert message when no students have been found from search
+      alertDisplay(filteredStudents);
+      
+
+   } else {
+
+      // display all students if search field is empty
+      showPage(data, 1);
+      addPagination(data);
+   }
 }
 
-// Calling functions
+// alert function
+function alertDisplay(array) {
+   const alertMessage = document.querySelector('#alert-message');
 
-SearchBar(data);
+   if (array.length === 0) {
+      alert("No Results Found. Please Try Again.");
+   } else {
+      alertMessage.textContent = "";
+   }
+}
 
+// keyup event to search student
+searchInput.addEventListener('keyup', () => {
+   searchStudent();
+})
+
+// click event to search student
+searchBtn.addEventListener('click', (e) => {
+   e.preventDefault();
+
+   searchStudent();
+})
+
+// call functions
 showPage(data, 1);
-
 addPagination(data);
-
-
-
-
